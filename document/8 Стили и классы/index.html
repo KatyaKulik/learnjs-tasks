@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      function showNotification(options) {
+        let box = document.createElement("div");
+        box.className = "notification";
+        box.classList.add(options.className);
+        box.textContent = options.html;
+        box.style.top = options.top + "px";
+        document.body.append(box);
+        function show() {
+          if (box.style.right === "100%") {
+            box.style.right = options.right + "px";
+          } else {
+            box.style.right = "100%";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
